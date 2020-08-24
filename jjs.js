@@ -1,0 +1,1 @@
+var foo="furiosa";function bar(o,a){this.localThis=o,console.log(this.localThis*a)}new bar(2,3);

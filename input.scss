@@ -1,22 +1,37 @@
 $image: url("https://wallpapercave.com/wp/lKlqTGz.jpg");
 $border: 2px solid #000;
+$color: 255;
 
 @keyframes move {
-  @for $i from 0 through 10 {
+  @for $i from 0 through 11 {
     #{ $i * 10% } {
       @if $i < 5 {
-        background-position: #{ $i * 150 }px 0px;
+        background-position: #{ 150 * $i }px 0px;
       }
-      @if $i > 5 and $i < 9 {
-        background-position: -100px #{ $i * -110 }px;
+      @if $i > 5 and $i < 10 {
+        background-position: #{ 350 / $i }px 0px;
       }
-      @if $i == 10 {
+      @if $i == 11 {
         background-position: 0px 0px;
       }
     }
   }
+  // @for $i from 1 through 100 {
+  //   background-color: rgb($i, $i, $i);
+  // }
 }
 
+@keyframes coler {
+  @for $i from 1 through 100 {
+    #{$i * 10%} {
+      background-color: rgb($i, $i, 50);
+    }
+  }
+}
+
+body {
+  animation: coler 1s infinite;
+}
 .holder {
   position: absolute;
   top: 50%;
